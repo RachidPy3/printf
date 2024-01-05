@@ -48,10 +48,3 @@ int ft_printf(const char *format, ...){
     va_end(ap);
     return (count);
 }
-
-int main(int argc, char const *argv[])
-{
-    int num = 1;
-    ft_printf("hello %d", num);
-    return 0;
-}
