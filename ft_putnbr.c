@@ -15,23 +15,19 @@
 void	ft_putnbr(va_list ap)
 {
 	unsigned int	nb;
-    int n;
+    	int n;
 
-    n = va_arg(ap, int);
+    	n = va_arg(ap, int);
 	nb = n;
 	if (n < 0)
 	{
-        char min = '-';
+        	char min = '-';
 		write(1, &min, 1);
 		nb *= -1;
 	}
-	if (nb < 10){
-        char num = nb + '0';
-		write(1, &num, 1);
-    }
-	else
+	if (nb < 10)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+        	char num = nb + '0';
+		write(1, &num, 1);
 	}
 }
