@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmouatac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 13:14:01 by rmouatac          #+#    #+#             */
-/*   Updated: 2024/01/05 13:14:04 by rmouatac         ###   ########.fr       */
+/*   Created: 2024/01/06 13:58:59 by rmouatac          #+#    #+#             */
+/*   Updated: 2024/01/06 13:59:04 by rmouatac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n, int *count)
+void	ft_putstr(char *s, int *count)
 {
-	unsigned int	nb;
-
-	nb = n;
-	if (n < 0)
+	if (s == NULL)
+		ft_putstr("(null)", count);
+	while (s && *s)
 	{
-		ft_putchar('-', count);
-		nb *= -1;
-	}
-	if (nb < 10)
-		ft_putchar(nb + '0', count);
-	else
-	{
-		ft_putnbr(nb / 10, count);
-		ft_putnbr(nb % 10, count);
+		ft_putchar(*s, count);
+		s++;
 	}
 }

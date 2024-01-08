@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmouatac <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 12:06:34 by rmouatac          #+#    #+#             */
-/*   Updated: 2024/01/05 12:06:40 by rmouatac         ###   ########.fr       */
+/*   Created: 2024/01/07 12:06:15 by rmouatac          #+#    #+#             */
+/*   Updated: 2024/01/07 12:06:18 by rmouatac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-void	ft_putnbr(va_list ap);
+void	ft_putunsigned(unsigned int n, int *count)
+{
+	if (n < 10)
+		ft_putchar(n + '0', count);
+	else
+	{
+		ft_putnbr(n / 10, count);
+		ft_putnbr(n % 10, count);
+	}
+}
