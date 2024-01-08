@@ -29,6 +29,7 @@ static void	handle_flags(va_list ap, const char format, int *count)
 	else if (format == 'p')
 		ft_putaddr(va_arg(ap, void *), count);
 }
+<<<<<<< HEAD
 
 int	ft_printf(const char *format, ...)
 {
@@ -51,3 +52,5 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
+=======
+>>>>>>> 9dbf6a490450bde8059ff6dd0eb7bf9981974815

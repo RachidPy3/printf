@@ -15,6 +15,7 @@
 void	ft_putnbr(int n, int *count)
 {
 	unsigned int	nb;
+<<<<<<< HEAD
 
 	nb = n;
 	if (n < 0)
@@ -28,5 +29,21 @@ void	ft_putnbr(int n, int *count)
 	{
 		ft_putnbr(nb / 10, count);
 		ft_putnbr(nb % 10, count);
+=======
+    	int n;
+
+    	n = va_arg(ap, int);
+	nb = n;
+	if (n < 0)
+	{
+        	char min = '-';
+		write(1, &min, 1);
+		nb *= -1;
+	}
+	if (nb < 10)
+	{
+        	char num = nb + '0';
+		write(1, &num, 1);
+>>>>>>> 9dbf6a490450bde8059ff6dd0eb7bf9981974815
 	}
 }
