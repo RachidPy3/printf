@@ -12,8 +12,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-%.o: %.c libprintf.h
-	$(CC) $(FLAGS) -c $< -o $@
+%.o: %.c ft_printf.h
+	$(CC) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ) $(BOBJ)

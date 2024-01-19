@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static void	ft_putaddrhex(unsigned long nbr, char Xx, int *count)
+static void	ft_putaddrhex(unsigned long nbr, int *count)
 {
 	char	*base;
 
@@ -21,16 +21,16 @@ static void	ft_putaddrhex(unsigned long nbr, char Xx, int *count)
 		ft_putchar(base[nbr], count);
 	else
 	{
-		ft_putaddrhex(nbr / 16, Xx, count);
-		ft_putaddrhex(nbr % 16, Xx, count);
+		ft_putaddrhex(nbr / 16, count);
+		ft_putaddrhex(nbr % 16, count);
 	}
 }
 
 void	ft_putaddr(void *addr, int *count)
 {
-	unsigned long int	ptr;
+	unsigned long	ptr;
 
 	ptr = (unsigned long)addr;
 	ft_putstr("0x", count);
-	ft_putaddrhex(ptr, 'x', count);
+	ft_putaddrhex(ptr, count);
 }
